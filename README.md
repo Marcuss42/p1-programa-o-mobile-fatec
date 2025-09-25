@@ -1,2 +1,5 @@
-# p1-programa-o-mobile-fatec
-Projeto 1: 
+# Projeto 1: Gerenciador de Lembretes
+
+Marcus Paulo da Silva Francisco
+
+**RA:** *2040482522047*
