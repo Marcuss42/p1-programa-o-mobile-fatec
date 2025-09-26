@@ -1,11 +1,29 @@
 import React from "react";
 import LembreteEntrada from "./LembreteEntrada";
+import LembreteLista from "./LembreteLista";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      vetorLembretes: []
+      vetorLembretes: [
+        {
+          descricao: "Estudar React",
+          favorito: true
+        },
+        {
+          descricao: "Ir ao supermercado",
+          favorito: false
+        },
+        {
+          descricao: "Lavar o carro",
+          favorito: true
+        },
+        {
+          descricao: "Ler um livro",
+          favorito: false
+        }
+      ]
     };
   }
 
@@ -32,6 +50,9 @@ class App extends React.Component {
               textoBotao={textoBotao}
               funcAdicionar={this.adicionarLembrete}
             />
+
+            <LembreteLista 
+              vetorLembretes={this.state.vetorLembretes}/>
           </div>
         </div>
       </div>
