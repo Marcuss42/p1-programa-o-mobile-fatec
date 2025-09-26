@@ -6,24 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      vetorLembretes: [
-        {
-          descricao: "Estudar React",
-          favorito: true
-        },
-        {
-          descricao: "Ir ao supermercado",
-          favorito: false
-        },
-        {
-          descricao: "Lavar o carro",
-          favorito: true
-        },
-        {
-          descricao: "Ler um livro",
-          favorito: false
-        }
-      ]
+      vetorLembretes: []
     };
   }
 
