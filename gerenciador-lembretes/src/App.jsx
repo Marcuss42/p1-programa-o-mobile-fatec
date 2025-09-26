@@ -22,6 +22,12 @@ class App extends React.Component {
     this.setState({ vetorLembretes: this.state.vetorLembretes }); 
   }
 
+  alternarFavorito = (index) => {
+    const vetor = this.state.vetorLembretes;
+    vetor[index].favorito = !vetor[index].favorito;
+    this.setState({ vetorLembretes: vetor });
+  };
+
   excluirLembrete = (index) => {
     const vetor = this.state.vetorLembretes;
     vetor.splice(index, 1);
@@ -42,6 +48,7 @@ class App extends React.Component {
 
             <LembreteLista 
               vetorLembretes={this.state.vetorLembretes}
+              alternarFavorito={this.alternarFavorito}
               excluirLembrete={this.excluirLembrete}/>
           </div>
         </div>

@@ -16,6 +16,7 @@ const LembreteLista = (props) => {
                   <div
                     className="btn border w-10"
                     style={{ backgroundColor: lembrete.favorito ? "yellow" : "lightgray" }}
+                    onClick={() => props.alternarFavorito(index)}
                     onDoubleClick={() => props.excluirLembrete(index)}>
 
                     {lembrete.descricao}
