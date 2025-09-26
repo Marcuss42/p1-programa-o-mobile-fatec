@@ -10,13 +10,14 @@ const LembreteLista = (props) => {
           ) 
             : 
           (
-            props.vetorLembretes.map((lembrete) => (
+            props.vetorLembretes.map((lembrete, index) => (
               <div className="col-3">
                 
                   <div
                     className="btn border w-10"
                     style={{ backgroundColor: lembrete.favorito ? "yellow" : "lightgray" }}
-                  >
+                    onDoubleClick={() => props.excluirLembrete(index)}>
+
                     {lembrete.descricao}
                   </div>
 

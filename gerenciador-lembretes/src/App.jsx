@@ -22,6 +22,12 @@ class App extends React.Component {
     this.setState({ vetorLembretes: this.state.vetorLembretes }); 
   }
 
+  excluirLembrete = (index) => {
+    const vetor = this.state.vetorLembretes;
+    vetor.splice(index, 1);
+    this.setState({ vetorLembretes: vetor });
+  };
+
   render() {
     const textoBotao = "Cadastrar Lembrete";
 
@@ -35,7 +41,8 @@ class App extends React.Component {
             />
 
             <LembreteLista 
-              vetorLembretes={this.state.vetorLembretes}/>
+              vetorLembretes={this.state.vetorLembretes}
+              excluirLembrete={this.excluirLembrete}/>
           </div>
         </div>
       </div>
