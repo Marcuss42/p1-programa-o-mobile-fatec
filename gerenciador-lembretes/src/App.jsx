@@ -46,7 +46,7 @@ class App extends React.Component {
     const textoBotao = "Cadastrar Lembrete";
 
     return (
-      <div className="container">
+      <div className="container"> 
         <div className="row">
           <div className="col">
             <LembreteEntrada
