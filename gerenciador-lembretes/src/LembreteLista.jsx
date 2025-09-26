@@ -4,15 +4,29 @@ const LembreteLista = (props) => {
     <div className="container">
       <br />
       <div className="row col-12">
-        {
+        { 
           props.vetorLembretes.length === 0 ? (
             <p className="text-center">Nenhum lembrete cadastrado.</p>
           ) 
             : 
+          props.filtro === "favoritos" ? (
+            props.vetorLembretes.filter(lembrete => lembrete.favorito).map((lembrete, index) => (
+              <div className="col-3">
+                <div
+                  className="btn border w-10"
+                  style={{ backgroundColor: lembrete.favorito ? "yellow" : "lightgray" }}
+                  onClick={() => props.alternarFavorito(index)}
+                  onDoubleClick={() => props.excluirLembrete(index)}>
+                  {lembrete.descricao}
+                </div>
+                <br />
+              </div>
+            ))
+          )
+            :
           (
             props.vetorLembretes.map((lembrete, index) => (
               <div className="col-3">
-                
                   <div
                     className="btn border w-10"
                     style={{ backgroundColor: lembrete.favorito ? "yellow" : "lightgray" }}
@@ -21,11 +35,8 @@ const LembreteLista = (props) => {
 
                     {lembrete.descricao}
                   </div>
-
-                
                 <br />
                 <br />
-                
               </div>
             ))
           )

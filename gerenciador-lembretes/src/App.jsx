@@ -6,7 +6,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      vetorLembretes: []
+      vetorLembretes: [],
+      filtro: "todos"
     };
   }
 
@@ -34,6 +35,13 @@ class App extends React.Component {
     this.setState({ vetorLembretes: vetor });
   };
 
+  filtrarFavoritos = () => {
+    if (this.state.filtro === "favoritos")
+      this.setState({ filtro: "todos" });
+    else
+      this.setState({ filtro: "favoritos" });
+  }
+
   render() {
     const textoBotao = "Cadastrar Lembrete";
 
@@ -46,10 +54,22 @@ class App extends React.Component {
               funcAdicionar={this.adicionarLembrete}
             />
 
+            <button
+              className="btn"
+              onClick={this.filtrarFavoritos}
+              style={{
+                backgroundColor: this.state.filtro === "favoritos" ? "yellow" : "lightgray",
+              }}>
+              {this.state.filtro === "favoritos" ? "Mostrar Todos" : "Mostrar Favoritos"}  
+              
+            </button>
+
+
             <LembreteLista 
               vetorLembretes={this.state.vetorLembretes}
               alternarFavorito={this.alternarFavorito}
-              excluirLembrete={this.excluirLembrete}/>
+              excluirLembrete={this.excluirLembrete}
+              filtro= {this.state.filtro === "favoritos" ? "favoritos" : "todos" }/>
           </div>
         </div>
       </div>
